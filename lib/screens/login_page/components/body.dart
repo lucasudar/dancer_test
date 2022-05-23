@@ -1,6 +1,7 @@
 import 'package:dantser_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:math' as math;
 
 class Body extends StatefulWidget {
   const Body({
@@ -133,6 +134,39 @@ class _BodyState extends State<Body> {
                                     end: Alignment.bottomRight,
                                   ),
                                 ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      top: size.height * 0.01,
+                                      left: size.width * 0.04,
+                                      child: Transform.rotate(
+                                        angle: -15 * math.pi / 180,
+                                        child: const Text(
+                                          '5',
+                                          style: TextStyle(
+                                            fontSize: 80,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      top: size.height * 0.01,
+                                      left: size.width * 0.14,
+                                      child: Transform.rotate(
+                                        angle: -15 * math.pi / 180,
+                                        child: const Text(
+                                          '%',
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               )
                             ],
                           ),
@@ -143,11 +177,10 @@ class _BodyState extends State<Body> {
                                 "ВЕРНЕМ %\nОТ ПЛАТЕЖА",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  fontSize: 24,
-                                    height: 0.9
-                                ),
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                    height: 0.9),
                               ),
                               SizedBox(height: kDefaultPadding / 4),
                               Text(
@@ -166,7 +199,8 @@ class _BodyState extends State<Body> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 10),
-                                child: Image.asset('assets/icons/down-button.png',
+                                child: Image.asset(
+                                    'assets/icons/down-button.png',
                                     height: size.height * 0.03,
                                     color: Colors.white),
                               ),
