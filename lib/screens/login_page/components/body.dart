@@ -113,31 +113,71 @@ class _BodyState extends State<Body> {
                         color: kPrimaryColor,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Stack(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Positioned(
-                            top: -20,
-                            left: 20,
-                            child: Container(
-                              width: size.width * 0.2,
-                              height: size.height * 0.2,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Color(0xF8CCCBE2),
-                                    Colors.red,
-                                  ],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 100,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xF8CCCBE2),
+                                      Colors.red,
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  'Вернем %\n от платежа',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
                                 ),
                               ),
-                            ),
+                              SizedBox(height: kDefaultPadding / 2),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Text(
+                                  'Подключите автоплатеж\n и получайте бонусами 5% от\n каждого пополнения',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Image.asset(
+                                'assets/icons/down-button.png',
+                                height: size.height * 0.03,
+                                color: Colors.white
+                              ),
+                            ],
                           ),
                         ],
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
