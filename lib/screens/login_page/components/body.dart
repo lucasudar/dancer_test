@@ -139,27 +139,24 @@ class _BodyState extends State<Body> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Text(
-                                  'Вернем %\n от платежа',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
+                              Text(
+                                "ВЕРНЕМ %\nОТ ПЛАТЕЖА",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                    height: 0.9
                                 ),
                               ),
-                              SizedBox(height: kDefaultPadding / 2),
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: Text(
-                                  'Подключите автоплатеж\n и получайте бонусами 5% от\n каждого пополнения',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                  ),
+                              SizedBox(height: kDefaultPadding / 4),
+                              Text(
+                                'Подключите автоплатеж и\nполучайте бонусами 5% от\nкаждого пополнения',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
                                 ),
                               ),
                             ],
@@ -167,10 +164,11 @@ class _BodyState extends State<Body> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Image.asset(
-                                'assets/icons/down-button.png',
-                                height: size.height * 0.03,
-                                color: Colors.white
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 10),
+                                child: Image.asset('assets/icons/down-button.png',
+                                    height: size.height * 0.03,
+                                    color: Colors.white),
                               ),
                             ],
                           ),
